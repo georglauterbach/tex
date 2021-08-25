@@ -1,0 +1,19 @@
+\newcounter{lecture}
+
+\newcommand{\lecture}[1]{
+	\refstepcounter{lecture}
+
+	\vspace{.5em}
+	\begin{center}
+		\begin{minipage}{7cm}
+			\hrule
+			\vspace*{.5em}
+			\begin{center}
+				VL \thelecture~~//~~#1
+			\end{center}
+			\vspace{.4em}
+			\hrule
+		\end{minipage}
+	\end{center}
+	\vspace*{.5em}
+}

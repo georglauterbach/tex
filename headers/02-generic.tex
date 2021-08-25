@@ -1,0 +1,54 @@
+\author{Georg Lauterbach}
+
+% ? >> encoding & fonts
+
+\usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+
+\usepackage{fontspec}
+\setmonofont[%
+    Contextuals={Alternate},
+    Scale=MatchLowercase
+]{Fira Code}
+
+% ? >> formatting
+
+\usepackage{%
+    float,
+    microtype,
+    booktabs,
+    enumitem,
+    emptypage,
+    parskip,
+    subcaption,
+    multicol,
+    blindtext,
+    titlepic
+}
+
+% ? >> links
+
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{hidelinks, colorlinks = false}
+\usepackage{url}
+\usepackage[autostyle]{csquotes}
+
+% ? >> title page & layout
+
+\usepackage[heightrounded,xetex,pass]{geometry}
+\usepackage[usetransparent=false]{svg}
+
+\usepackage[outermarks]{titleps}
+
+\settitlemarks{section,subsection}
+
+\newpagestyle{fancy}{%
+  \headrule%
+  \sethead{\thesection.~\sectiontitle}{}{\thesubsection.~\subsectiontitle}
+  \setfoot{}{\thepage}{}%
+}

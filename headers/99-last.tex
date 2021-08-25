@@ -1,0 +1,12 @@
+% ? >> patches
+
+% https://tex.stackexchange.com/questions/328128/strange-behaviour-in-biblatex-online-without-year
+\usepackage{xpatch}
+\xpatchbibdriver{online}
+{\printtext[parens]{\usebibmacro{date}}}
+{\iffieldundef{year}{}{\printtext[parens]{\usebibmacro{date}}}}
+{}{}
+
+% ? > loaded last
+
+\usepackage[noabbrev]{cleveref}

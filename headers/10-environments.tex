@@ -1,0 +1,72 @@
+\usepackage{%
+	amsmath,
+	amsfonts,
+	mathtools,
+	amsthm,
+	amssymb,
+	mathrsfs
+}
+
+\usepackage{%
+	cancel,
+	bm,
+	stmaryrd,
+	colonequals,
+	proof
+}
+
+\usepackage{mdframed}
+
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\renewcommand\C{\ensuremath{\mathbb{C}}}
+
+\newcommand{\var}[1]{\mathit{\text{#1}}}
+\newcommand{\func}[1]{\operatorname{\text{#1}}}
+
+\newcommand\contra{\scalebox{1.5}{$\lightning$}}
+
+\renewcommand\vdash{\mathrel{|}\joinrel\mathrel{-}}
+\renewcommand\vDash{\mathrel{|}\joinrel\mathrel{=}}
+\renewcommand\Vdash{\mathrel{|}\joinrel\mathrel{|}\joinrel\mathrel{-}}
+
+\mdfsetup{skipabove=1.5em,skipbelow=0em}
+\theoremstyle{definition}
+\mdfdefinestyle{theoremstyle}{
+	linewidth=0.6pt,%
+	frametitlerule=false,%
+	nobreak=true,
+}
+
+\mdtheorem[style=theoremstyle]{definition}{Definition}[section]
+\mdtheorem[style=theoremstyle]{theorem}[definition]{Theorem}
+\mdtheorem[style=theoremstyle]{satz}[definition]{Satz}
+\mdtheorem[style=theoremstyle]{prop}[definition]{Proposition}
+\mdtheorem[style=theoremstyle]{lemma}[definition]{Lemma}
+\mdtheorem[style=theoremstyle]{corollary}[definition]{Corollary}
+\mdtheorem[style=theoremstyle]{axiom}{Axiom}
+\mdtheorem[style=theoremstyle]{corollar}[definition]{Corollar}
+
+\newtheorem*{example}{Example}
+\surroundwithmdframed[%
+	innertopmargin=0,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	linewidth=4pt,
+	linecolor=gray,
+	backgroundcolor=lightgray]{example}
+
+\newtheorem*{terminology}{Terminology}
+\newtheorem*{notation}{Notation}
+\newtheorem*{problem}{Problem}
+\newtheorem*{terminologie}{Terminologie}
+
+% ? >> fixes
+
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
