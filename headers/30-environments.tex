@@ -1,0 +1,123 @@
+\usepackage{%
+	amsmath,
+	amsfonts,
+	mathtools,
+	amsthm,
+	amssymb,
+	mathrsfs,
+	mathtools
+}
+
+\usepackage{%
+	cancel,
+	bm,
+	stmaryrd,
+	colonequals,
+	proof,
+	mdframed
+}
+
+% ? >> miscellaneous
+
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\renewcommand\C{\ensuremath{\mathbb{C}}}
+
+\newcommand\cM{\ensuremath{\mathcal{M}}~}
+
+\newcommand{\var}[1]{\mathit{\text{#1}}}
+\newcommand{\func}[1]{\operatorname{\text{#1}}}
+
+\newcommand\contra{\scalebox{1.5}{$\lightning$}}
+
+\renewcommand\vdash{\mathrel{|}\joinrel\mathrel{-}}
+\renewcommand\vDash{\mathrel{|}\joinrel\mathrel{=}}
+\renewcommand\Vdash{\mathrel{|}\joinrel\mathrel{|}\joinrel\mathrel{-}}
+
+% ? >> boxed content
+
+\mdfsetup{%
+	skipabove=1em,
+	skipbelow=.7em,
+	frametitlerule=false,
+	nobreak=true,
+}
+
+\mdfdefinestyle{defaultBoxed}{
+	linewidth=0.5pt,
+	outerlinewidth=0.5pt,
+	innertopmargin=0.5\topskip,
+	innerbottommargin=\baselineskip,
+}
+
+\mdtheorem[style=defaultBoxed] {definition} {Definition}  [subsubsection]
+\mdtheorem[style=defaultBoxed] {lemma}      [definition]  {Lemma}
+
+\ifenglish
+
+\mdtheorem[style=defaultBoxed] {theorem}    [definition]  {Theorem}
+
+\else
+
+\mdtheorem[style=defaultBoxed] {satz}       [definition]  {Satz}
+
+\fi
+
+% ? >> non-boxed content
+
+\theoremstyle{definition}
+
+\newtheorem* {axiom}        {Axiom}
+\newtheorem* {notation}     {Notation}
+\newtheorem* {problem}      {Problem}
+
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=prussianBlue]{axiom}
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=powderBlue]{notation}
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=imperialRed]{problem}
+
+\ifenglish
+
+\newtheorem* {example}      {Example}
+\newtheorem* {corollary}    {Corollary}
+\newtheorem* {terminology}  {Terminology}
+
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{example}
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{corollary}
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminology}
+
+\else
+
+\newtheorem* {beispiel}     {Beispiel}
+\newtheorem* {korollar}     {Korollar}
+\newtheorem* {terminologie}  {Terminologie}
+
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{beispiel}
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{korollar}
+\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminologie}
+
+\fi
+
+% ? >> fixes
+
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
+
+% >> absolute signs
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% >>> swap the definition of \abs* and \norm*,
+%     so that \abs and \norm  resizes the size
+%     of the brackets, and the starred version
+%     does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
