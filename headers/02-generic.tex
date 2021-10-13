@@ -4,32 +4,34 @@
 
 \usepackage[T1]{fontenc}
 % \usepackage[utf8]{inputenc}
-\usepackage{textcomp}
 
-\usepackage{verbatim}
-\usepackage{fancyvrb}
+\usepackage{
+	textcomp,
+	verbatim,
+	fancyvrb,
+	fontspec,
+}
 
-\usepackage{fontspec}
 \setmonofont[%
-    Contextuals={Alternate},
-    Scale=MatchLowercase
+	Contextuals={Alternate},
+	Scale=MatchLowercase
 ]{Fira Code}
 
 % ? >> formatting
 
 \usepackage{%
-    float,
-    microtype,
-    booktabs,
-    enumitem,
-    emptypage,
-    parskip,
-    subcaption,
-    multicol,
-    blindtext,
-    titlepic,
-    tabularx,
-    makecell,
+	float,
+	microtype,
+	booktabs,
+	enumitem,
+	emptypage,
+	parskip,
+	subcaption,
+	multicol,
+	blindtext,
+	titlepic,
+	tabularx,
+	makecell,
 	listliketab,
 }
 
@@ -50,7 +52,15 @@
 \settitlemarks{section,subsection}
 
 \newpagestyle{fancy}{%
-  \headrule%
-  \sethead{\thesection.~\sectiontitle}{}{\thesubsection.~\subsectiontitle}
-  \setfoot{}{\thepage}{}%
+	\headrule%
+	\sethead{\thesection.~\sectiontitle}{}{\thesubsection.~\subsectiontitle}
+	\setfoot{}{\thepage}{}%
 }
+
+% ? >> graphics
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\PassOptionsToPackage{table}{xcolor}
+
+\usepackage{graphicx}
+\usepackage{caption}

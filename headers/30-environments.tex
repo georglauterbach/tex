@@ -55,13 +55,13 @@
 \mdtheorem[style=defaultBoxed] {definition} {Definition}  [subsubsection]
 \mdtheorem[style=defaultBoxed] {lemma}      [definition]  {Lemma}
 
-\ifenglish
+\ifenglish%
 
-\mdtheorem[style=defaultBoxed] {theorem}    [definition]  {Theorem}
+	\mdtheorem[style=defaultBoxed] {theorem}    [definition]  {Theorem}
 
 \else
 
-\mdtheorem[style=defaultBoxed] {satz}       [definition]  {Satz}
+	\mdtheorem[style=defaultBoxed] {satz}       [definition]  {Satz}
 
 \fi
 
@@ -77,32 +77,32 @@
 \surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=powderBlue]{notation}
 \surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=imperialRed]{problem}
 
-\ifenglish
+\ifenglish%
 
-\newtheorem* {example}      {Example}
-\newtheorem* {corollary}    {Corollary}
-\newtheorem* {terminology}  {Terminology}
+	\newtheorem* {example}      {Example}
+	\newtheorem* {corollary}    {Corollary}
+	\newtheorem* {terminology}  {Terminology}
 
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{example}
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{corollary}
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminology}
+	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{example}
+	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{corollary}
+	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminology}
 
 \else
 
-\newtheorem* {beispiel}     {Beispiel}
-\newtheorem* {korollar}     {Korollar}
-\newtheorem* {terminologie}  {Terminologie}
+	\newtheorem* {beispiel}     {Beispiel}
+	\newtheorem* {korollar}     {Korollar}
+	\newtheorem* {terminologie}  {Terminologie}
 
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{beispiel}
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{korollar}
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminologie}
+	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{beispiel}
+	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{korollar}
+	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminologie}
 
 \fi
 
 % ? >> fixes
 
 \def\thm@space@setup{%
-  \thm@preskip=\parskip \thm@postskip=0pt
+	\thm@preskip=\parskip\thm@postskip=0pt
 }
 \makeatother
 
@@ -115,9 +115,9 @@
 %     of the brackets, and the starred version
 %     does not.
 \makeatletter
-\let\oldabs\abs
+\let\oldabs\abs%
 \def\abs{\@ifstar{\oldabs}{\oldabs*}}
 %
-\let\oldnorm\norm
+\let\oldnorm\norm%
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
