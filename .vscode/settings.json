@@ -2,5 +2,46 @@
 	"cSpell.words": [
 		"postskip",
 		"preskip"
-	]
+	],
+  // TeX
+  "latex-workshop.bibtex-fields.sort.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
+  "latex-workshop.latex.outDir": "out",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-shell-escape",
+        // "-aux-directory=%OUTDIR%",
+        "-output-directory=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["--output-directory=%OUTDIR%", "%DOCFILE%"]
+    },
+    {
+      "name": "makeglossaries",
+      "command": "makeglossaries",
+      "args": ["-d%OUTDIR%", "%DOCFILE%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "plain",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "full",
+      "tools": ["xelatex", "biber", "makeglossaries", "xelatex"]
+    }
+  ],
 }
