@@ -25,7 +25,11 @@
 \newcommand\R{\ensuremath{\mathbb{R}}}
 \renewcommand\C{\ensuremath{\mathbb{C}}}
 
-\newcommand\cM{\ensuremath{\mathcal{M}}~}
+\newcommand\cC{\ensuremath{\mathcal{C}}}
+\newcommand\cD{\ensuremath{\mathcal{D}}}
+\newcommand\cM{\ensuremath{\mathcal{M}}}
+\newcommand\cQ{\ensuremath{\mathcal{Q}}}
+\newcommand\cU{\ensuremath{\mathcal{U}}}
 
 \newcommand{\var}[1]{\mathit{\text{#1}}}
 \newcommand{\func}[1]{\operatorname{\text{#1}}}
@@ -42,7 +46,7 @@
 	skipabove=1em,
 	skipbelow=.7em,
 	frametitlerule=false,
-	nobreak=true,
+	% nobreak=true,
 }
 
 \mdfdefinestyle{defaultBoxed}{
@@ -58,10 +62,12 @@
 \ifenglish%
 
 	\mdtheorem[style=defaultBoxed] {theorem}    [definition]  {Theorem}
+	\mdtheorem[style=defaultBoxed] {proofs}     [definition]  {Proof}
 
 \else
 
 	\mdtheorem[style=defaultBoxed] {satz}       [definition]  {Satz}
+	\mdtheorem[style=defaultBoxed] {beweis}     [definition]  {Beweis}
 
 \fi
 
@@ -91,7 +97,7 @@
 
 	\newtheorem* {beispiel}     {Beispiel}
 	\newtheorem* {korollar}     {Korollar}
-	\newtheorem* {terminologie}  {Terminologie}
+	\newtheorem* {terminologie} {Terminologie}
 
 	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{beispiel}
 	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{korollar}
