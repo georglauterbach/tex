@@ -1,23 +1,31 @@
-# TeX with Headers
+# TeX with include
 
 ## About
 
 This repository contains files in the form of "headers" to supply someone writing with TeX with the necessary templates. Like in C or Rust, you can "include" these files in your TeX project, either by downloading them or cloning this repository as a submodule and then using `\input{}`.
 
-The order is already given by the order of the files under `headers/`. You will need to import the language files and the file containing generic code snippets to make some of the other files work, i.e. you must include
+The order is already given by the order of the files under `include/`. Files under `include/` can only be used in the preamble. You will need to import the language files and the file containing generic code snippets to make some of the other files work, i.e. you must include
 
 ``` LATEX
 % ...
 
 % choose your language
-\input{tex/headers/01-language_english}
-\input{tex/headers/01-language_german}
+\input{tex/include/01-language_english}
+\input{tex/include/01-language_german}
 % import this one too
-\input{tex/headers/02-generic}
+\input{tex/include/02-generic}
 
 % ...
 
 \begin{document}
+```
+
+Files under `src/` can be used inside
+
+``` LATEX
+\begin{document}
+  ...
+\end{document}
 ```
 
 ## Disclaimer
