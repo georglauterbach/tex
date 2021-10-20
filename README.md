@@ -20,13 +20,15 @@ The order is already given by the order of the files under `include/`. Files und
 \begin{document}
 ```
 
-Files under `src/` can be used inside
+Files under `src/` can and must be used inside
 
 ``` LATEX
 \begin{document}
   ...
 \end{document}
 ```
+
+and not inside the preamble. These files mainly exists to eliminate boilerplate code.
 
 ## Disclaimer
 

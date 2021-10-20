@@ -8,7 +8,7 @@
 %   └───────────────────────────────────────────────────────┘
 
 \usepackage[xindy,toc,section]{glossaries}
-\makenoidxglossaries
+\makenoidxglossaries%
 
 \makeatletter
 \@ifpackagewith{glossaries}{acronym}%
@@ -16,10 +16,10 @@
 {\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedfalse}
 \makeatother
 
-\ifacronymsOptionIsLoaded
+\ifacronymsOptionIsLoaded%
 
 \usepackage[autostyle]{csquotes}
-\ifenglish
+\ifenglish%
 
 	\newacronym{sic}{[sic!]}%
 		{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}
