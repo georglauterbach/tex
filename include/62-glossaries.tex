@@ -9,27 +9,3 @@
 
 \usepackage[xindy,toc,section]{glossaries}
 \makenoidxglossaries%
-
-\makeatletter
-\@ifpackagewith{glossaries}{acronym}%
-{\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedtrue}%
-{\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedfalse}
-\makeatother
-
-\ifacronymsOptionIsLoaded%
-
-\usepackage[autostyle]{csquotes}
-\ifenglish%
-
-	\newacronym{sic}{[sic!]}%
-		{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}
-
-\else
-
-	\newacronym{sic}{[sic!]}%
-		{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
-
-\fi
-\fi
-
-\newcommand{\sic}{\acrshort{sic}\ }

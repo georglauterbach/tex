@@ -2,52 +2,109 @@
 %   │
 % ? | Provides common acronyms.
 %   │
-% ! │ Needs `61-acronym_glossaries.tex` to be loaded.
+% ! │ Requires `61-acronym_glossaries.tex` for
+% ! │ acronyms to work.
 %   │
 %   └───────────────────────────────────────────────────────┘
 
-% general
+\makeatletter
+\@ifpackagewith{glossaries}{acronym}%
+{\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedtrue}%
+{\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedfalse}
+\makeatother
 
-\newacronym{vm}{VM}{virtual machine}
-\newacronym{api}{API}{Application Programming Interface}
+\ifacronymsOptionIsLoaded%
 
-% specific to hardware
+	\usepackage[autostyle]{csquotes}
+	\ifenglish%
 
-\newacronym{hw}{HW}{Hardware}
+		\newacronym{sic}{[sic!]}%
+		{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}
 
-\newacronym{cpu}{CPU}{Central Processing Unit}
-\newacronym{mme}{MEE}{Memory Encryption Engine}
-\newacronym{sgx}{SGX}{Software Guard Extensions}
-\newacronym{tdx}{TDX}{Trusted Domain Extensions}
+		% general
 
-\newacronym{hdd}{HDD}{Hard Disk Drive}
-\newacronym{ssd}{SSD}{Solid State Disk}
-\newacronym{lba}{LBA}{Logical Block Address}
-\newacronym{ncme}{NVME}{Non-Volatile Memory Express}
+		\newacronym{vm}{VM}{virtual machine}
+		\newacronym{api}{API}{Application Programming Interface}
 
-% specific to operating systems
+		\newacronym{ipLaw}{IP}{Intellectual Property}
 
-\newacronym{os}{OS}{Operating System}
-\newacronym{ipc}{IPC}{Inter-Process Communication}
-\newacronym{irq}{IRQ}{Interrupt Request}
-\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
+		% specific to hardware
 
-\newacronym{fs}{FS}{File System}
-\newacronym{abi}{ABI}{Application Binary Interface}
+		\newacronym{hw}{HW}{Hardware}
 
-\newacronym{pcb}{PCB}{Process Control Block}
-\newacronym{tcb}{TCB}{Thread Control Block}
-\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
+		\newacronym{cpu}{CPU}{Central Processing Unit}
+		\newacronym{mme}{MEE}{Memory Encryption Engine}
+		\newacronym{sgx}{SGX}{Software Guard Extensions}
+		\newacronym{tdx}{TDX}{Trusted Domain Extensions}
 
-\newglossaryentry{posix}
-{%
-	name={POSIX},
-	description={The Portable Operating System Interface (POSIX) is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems. POSIX defines both the system- and user-level application programming interfaces (API), along with command line shells and utility interfaces, for software compatibility (portability) with variants of Unix and other operating systems}
-}
+		\newacronym{hdd}{HDD}{Hard Disk Drive}
+		\newacronym{ssd}{SSD}{Solid State Disk}
+		\newacronym{lba}{LBA}{Logical Block Address}
+		\newacronym{ncme}{NVME}{Non-Volatile Memory Express}
 
-% specific to security
+		% specific to operating systems
 
-\newacronym{tee}{TEE}{Trusted Execution Environment}
+		\newacronym{os}{OS}{Operating System}
+		\newacronym{ipc}{IPC}{Inter-Process Communication}
+		\newacronym{irq}{IRQ}{Interrupt Request}
+		\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
+		\newacronym{mmu}{MMU}{memory management unit}
 
-\newacronym{rsa}{RSA}{Rivest Shamir Adleman}
-\newacronym{dh}{DH}{Diffie Hellman}
+		\newacronym{rpc}{RPC}{Remote Procedure Call}
+
+		\newacronym{fs}{FS}{File System}
+		\newacronym{abi}{ABI}{Application Binary Interface}
+
+		\newacronym{pcb}{PCB}{Process Control Block}
+		\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
+		\newacronym{ktcb}{kTCB}{Kernel-Level Thread Control Block}
+
+		% specific to security
+
+		\newacronym{tee}{TEE}{Trusted Execution Environment}
+
+	\else
+
+		\newacronym{sic}{[sic!]}%
+		{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
+
+	\fi
+
+	\newcommand{\sic}{\acrshort{sic}\ }
+
+	% language-independent acronyms
+
+	\newacronym{tcb}{TCB}{Thread Control Block}
+	\newacronym{rsa}{RSA}{Rivest Shamir Adleman}
+	\newacronym{dh}{DH}{Diffie Hellman}
+
+\fi
+
+\ifenglish
+	\newglossaryentry{posix}
+	{%
+		name={POSIX},
+		description={The Portable Operating System Interface (POSIX) is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems. POSIX defines both the system- and user-level application programming interfaces (API), along with command line shells and utility interfaces, for software compatibility (portability) with variants of Unix and other operating systems.}
+	}
+
+	\newglossaryentry{linux}
+	{%
+		name={Linux},
+		description={Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.}
+	}
+
+	\newglossaryentry{unix}
+	{%
+		name={UNIX},
+		description={UNIX s a family of multitasking, multi-user computer operating systems that derive from the original AT&T Unix, whose development started in 1969 at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others.}
+	}
+
+\else
+
+	\newglossaryentry{posix}
+	{%
+		name={POSIX},
+		description={Das Portable Operating System Interface (POSIX) ist eine gemeinsam vom IEEE und der Open Group für Unix entwickelte standardisierte Programmierschnittstelle, welche die Schnittstelle zwischen Anwendungssoftware und Betriebssystem darstellt. Die internationale Norm trägt die Bezeichnung ISO/IEC/IEEE 9945. }
+	}
+
+\fi
