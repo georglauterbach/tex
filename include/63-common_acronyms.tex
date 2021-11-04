@@ -18,65 +18,52 @@
 	\usepackage[autostyle]{csquotes}
 	\ifenglish%
 
-		\newacronym{sic}{[sic!]}%
-		{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}
-
-		% general
-
-		\newacronym{vm}{VM}{virtual machine}
-		\newacronym{api}{API}{Application Programming Interface}
-
-		\newacronym{ipLaw}{IP}{Intellectual Property}
-
-		% specific to hardware
-
-		\newacronym{hw}{HW}{Hardware}
-
-		\newacronym{cpu}{CPU}{Central Processing Unit}
-		\newacronym{mme}{MEE}{Memory Encryption Engine}
-		\newacronym{sgx}{SGX}{Software Guard Extensions}
-		\newacronym{tdx}{TDX}{Trusted Domain Extensions}
-
-		\newacronym{hdd}{HDD}{Hard Disk Drive}
-		\newacronym{ssd}{SSD}{Solid State Disk}
-		\newacronym{lba}{LBA}{Logical Block Address}
-		\newacronym{ncme}{NVME}{Non-Volatile Memory Express}
-
-		% specific to operating systems
-
-		\newacronym{os}{OS}{Operating System}
-		\newacronym{ipc}{IPC}{Inter-Process Communication}
-		\newacronym{irq}{IRQ}{Interrupt Request}
-		\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
-		\newacronym{mmu}{MMU}{memory management unit}
-
-		\newacronym{rpc}{RPC}{Remote Procedure Call}
-
-		\newacronym{fs}{FS}{File System}
 		\newacronym{abi}{ABI}{Application Binary Interface}
-
-		\newacronym{pcb}{PCB}{Process Control Block}
-		\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
+		\newacronym{api}{API}{Application Programming Interface}
+		\newacronym{ca}{CA}{Certificate Authority}
+		\newacronym{chf}{CHF}{Cryptographic Hash Function}
+		\newacronym{cpu}{CPU}{Central Processing Unit}
+		\newacronym{ddos}{DDoS}{Distributed Denial of Service (Attack)}
+		\newacronym{dos}{DoS}{Denial of Service (Attack)}
+		\newacronym{ecdsa}{ECDSA}{Elliptic Curve Digital Signature Algorithm}
+		\newacronym{fs}{FS}{File System}
+		\newacronym{hdd}{HDD}{Hard Disk Drive}
+		\newacronym{hmac}{HMAC}{Hash-Based Message Authentication Code}
+		\newacronym{ipc}{IPC}{Inter-Process Communication}
+		\newacronym{ipLaw}{IP}{Intellectual Property}
+		\newacronym{irq}{IRQ}{Interrupt Request}
 		\newacronym{ktcb}{kTCB}{Kernel-Level Thread Control Block}
-
-		% specific to security
-
+		\newacronym{lba}{LBA}{Logical Block Address}
+		\newacronym{mac}{MAC}{Message Authentication Code}
+		\newacronym{mme}{MEE}{Memory Encryption Engine}
+		\newacronym{mmu}{MMU}{Memory Management Unit}
+		\newacronym{ncme}{NVMe}{Non-Volatile Memory Express}
+		\newacronym{os}{OS}{Operating System}
+		\newacronym{pcb}{PCB}{Process Control Block}
+		\newacronym{rpc}{RPC}{Remote Procedure Call}
+		\newacronym{sha}{SHA}{Secure Hash Algorithm}
+		\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}
+		\newacronym{ssd}{SSD}{Solid State Disk}
 		\newacronym{tee}{TEE}{Trusted Execution Environment}
+		\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
+		\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
+		\newacronym{vm}{VM}{virtual machine}
 
 	\else
 
-		\newacronym{sic}{[sic!]}%
-		{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
+		\newacronym{chf}{CHF}{Kryptographische Hashfunktion}
+		\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
 
 	\fi
 
-	\newcommand{\sic}{\acrshort{sic}\ }
+	\newcommand{\sic}{\acrshort{sic}}
 
-	% language-independent acronyms
-
-	\newacronym{tcb}{TCB}{Thread Control Block}
-	\newacronym{rsa}{RSA}{Rivest Shamir Adleman}
 	\newacronym{dh}{DH}{Diffie Hellman}
+	\newacronym{hw}{HW}{Hardware}
+	\newacronym{rsa}{RSA}{Rivest Shamir Adleman}
+	\newacronym{sgx}{SGX}{Software Guard Extensions}
+	\newacronym{tcb}{TCB}{Thread Control Block}
+	\newacronym{tdx}{TDX}{Trusted Domain Extensions}
 
 \fi
 
@@ -105,6 +92,18 @@
 	{%
 		name={POSIX},
 		description={Das Portable Operating System Interface (POSIX) ist eine gemeinsam vom IEEE und der Open Group für Unix entwickelte standardisierte Programmierschnittstelle, welche die Schnittstelle zwischen Anwendungssoftware und Betriebssystem darstellt. Die internationale Norm trägt die Bezeichnung ISO/IEC/IEEE 9945. }
+	}
+
+	\newglossaryentry{linux}
+	{%
+		name={Linux},
+		description={Als Linux oder GNU/Linux bezeichnet man in der Regel freie, UNIX-ähnliche Mehrbenutzer-Betriebssysteme, die auf dem Linux-Kernel und wesentlich auf GNU-Software basieren. Die weite, auch kommerzielle Verbreitung wurde ab 1992 durch die Lizenzierung des Linux-Kernels unter der freien Lizenz GPL ermöglicht. Einer der Initiatoren von Linux war der finnische Programmierer Linus Torvalds. Er nimmt bis heute eine koordinierende Rolle bei der Weiterentwicklung des Linux-Kernels ein und wird auch als Benevolent Dictator for Life (deutsch wohlwollender Diktator auf Lebenszeit) bezeichnet.}
+	}
+
+	\newglossaryentry{unix}
+	{%
+		name={UNIX},
+		description={Unix ist ein Mehrbenutzer-Betriebssystem für Computer. Es wurde im August 1969 von Bell Laboratories zur Unterstützung der Softwareentwicklung entwickelt. Heute steht Unix allgemein für Betriebssysteme, die entweder ihren Ursprung im Unix-System von AT&T (ursprünglich Bell Laboratories) haben oder dessen Konzepte implementieren. Es ist zusammen mit seinen Varianten und Weiterentwicklungen – oft unter anderen, in der Öffentlichkeit bekannteren Namen – eines der verbreitetsten und einflussreichsten Betriebssysteme der Computergeschichte.}
 	}
 
 \fi
