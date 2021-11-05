@@ -16,58 +16,66 @@
 \ifacronymsOptionIsLoaded%
 
 	\usepackage[autostyle]{csquotes}
-	\ifenglish%
+	\newcommand{\newDualLangAcronym}[4]%
+	{%
+		\ifenglish%
+			\newacronym{#1}{#2}{#3}
+		\else
+			\newacronym{#1}{#2}{#4 (engl. \enquote{#3})}
+		\fi
+	}
 
-		\newacronym{abi}{ABI}{Application Binary Interface}
-		\newacronym{api}{API}{Application Programming Interface}
-		\newacronym{ca}{CA}{Certificate Authority}
-		\newacronym{chf}{CHF}{Cryptographic Hash Function}
-		\newacronym{cpu}{CPU}{Central Processing Unit}
-		\newacronym{ddos}{DDoS}{Distributed Denial of Service (Attack)}
-		\newacronym{dos}{DoS}{Denial of Service (Attack)}
-		\newacronym{ecdsa}{ECDSA}{Elliptic Curve Digital Signature Algorithm}
-		\newacronym{fs}{FS}{File System}
-		\newacronym{hdd}{HDD}{Hard Disk Drive}
-		\newacronym{hmac}{HMAC}{Hash-Based Message Authentication Code}
-		\newacronym{ipc}{IPC}{Inter-Process Communication}
-		\newacronym{ipLaw}{IP}{Intellectual Property}
-		\newacronym{irq}{IRQ}{Interrupt Request}
-		\newacronym{ktcb}{kTCB}{Kernel-Level Thread Control Block}
-		\newacronym{lba}{LBA}{Logical Block Address}
-		\newacronym{mac}{MAC}{Message Authentication Code}
-		\newacronym{mme}{MEE}{Memory Encryption Engine}
-		\newacronym{mmu}{MMU}{Memory Management Unit}
-		\newacronym{ncme}{NVMe}{Non-Volatile Memory Express}
-		\newacronym{os}{OS}{Operating System}
-		\newacronym{pcb}{PCB}{Process Control Block}
-		\newacronym{rpc}{RPC}{Remote Procedure Call}
-		\newacronym{sha}{SHA}{Secure Hash Algorithm}
-		\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}
-		\newacronym{ssd}{SSD}{Solid State Disk}
-		\newacronym{tee}{TEE}{Trusted Execution Environment}
-		\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
-		\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
-		\newacronym{vm}{VM}{virtual machine}
+	\newcommand{\as}[1]{\acrshort{#1}}
+	\newcommand{\af}[1]{\acrfull{#1}}
 
-	\else
+	% acronyms that exists in German and English
 
-		\newacronym{chf}{CHF}{Kryptographische Hashfunktion}
-		\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
-
-	\fi
-
-	\newcommand{\sic}{\acrshort{sic}}
-
-	\newacronym{dh}{DH}{Diffie Hellman}
+	\newDualLangAcronym{chf}{CHF}{Cryptographic Hash Function}{Kryptographische Hashfunktion}
+	\newDualLangAcronym{abi}{ABI}{Application Binary Interface}{Binärschnittstelle}
+	\newDualLangAcronym{api}{API}{Application Programming Interface}{Programmierschnittstelle}
+	\newDualLangAcronym{ca}{CA}{Certificate Authority}{Zertifizierungsstelle}
+	\newDualLangAcronym{cpu}{CPU}{Central Processing Unit}{Prozessor}
+	\newDualLangAcronym{ddos}{DDoS}{Distributed Denial-of-Service (Attack)}{Verteilter Denial of Service (Angriff)}
+	\newDualLangAcronym{dos}{DoS}{Denial-of-Service (Attack)}{Denial of Service (Angriff)}
+	\newDualLangAcronym{fs}{FS}{File System}{Dateisystem}
+	\newDualLangAcronym{hdd}{HDD}{Hard Disk Drive}{Festplattenlaufwerk}
+	\newDualLangAcronym{ipc}{IPC}{Inter-Process Communication}{Interprozesskommunikation}
+	\newDualLangAcronym{ipLaw}{IP}{Intellectual Property}{Geistiges Eigentum}
+	\newDualLangAcronym{irq}{IRQ}{Interrupt Request}{Unterbrechungsanforderung}
+	\newDualLangAcronym{lba}{LBA}{Logical Block Address}{Logische Blockadresse}
+	\newDualLangAcronym{mac}{MAC}{Message Authentication Code}{Nachrichtenauthentifizierungscode}
+	\newDualLangAcronym{mme}{MEE}{Memory Encryption Engine}{Speicherverschlüsselungsprozessor}
+	\newDualLangAcronym{mmu}{MMU}{Memory Management Unit}{Speicherverwaltungsprozessor}
+	\newDualLangAcronym{os}{OS}{Operating System}{Bertiebssystem}
+	\newDualLangAcronym{pcb}{PCB}{Process Control Block}{Prozesskontrollblock}
+	\newDualLangAcronym{rpc}{RPC}{Remote Procedure Call}{\enquote{Aufruf einer fernen Prozedur}}
+	\newDualLangAcronym{sic}{[sic!]}%
+		{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}%
+		{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
+	\newDualLangAcronym{ssd}{SSD}{Solid State Disk}{Halbleiterlaufwerk}
+	\newDualLangAcronym{tm}{TM}{\textit{Turing} Machine}{\textit{Turing} Maschine}
+	\newDualLangAcronym{vm}{VM}{Virtual Machine}{Virtuelle Maschine}
+	
+	% acronyms that exist as proper nouns only
+	
+	\newacronym{dh}{DH}{\textit{Diffie Hellman}}
+	\newacronym{ecdsa}{ECDSA}{Elliptic Curve Digital Signature Algorithm}
+	\newacronym{hmac}{HMAC}{Keyed-Hash (Hash-Based) Message Authentication Code}
 	\newacronym{hw}{HW}{Hardware}
-	\newacronym{rsa}{RSA}{Rivest Shamir Adleman}
+	\newacronym{ktcb}{kTCB}{Kernel-Level Thread Control Block}
+	\newacronym{ncme}{NVMe}{Non-Volatile Memory Express}
+	\newacronym{rsa}{RSA}{\textit{Rivest Shamir Adleman}}
 	\newacronym{sgx}{SGX}{Software Guard Extensions}
+	\newacronym{sha}{SHA}{Secure Hash Algorithm}
 	\newacronym{tcb}{TCB}{Thread Control Block}
 	\newacronym{tdx}{TDX}{Trusted Domain Extensions}
+	\newacronym{tee}{TEE}{Trusted Execution Environment}
+	\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
+	\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
 
 \fi
 
-\ifenglish
+\ifenglish%
 	\newglossaryentry{posix}
 	{%
 		name={POSIX},

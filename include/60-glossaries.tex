@@ -5,10 +5,19 @@
 %   │ Note that we're using `xindy` and `noidx` so you
 %   │ don't have to use `makeglossaries` separately.
 %   │
+% ! │ To adjust whether acronyms should be loaded,
+% ! │ you may use
+%   │   \PassOptionsToPackage{acronym}{glossaries}
+%   │
+% ! │ To adjust which headings `glossaries' should use,
+% ! │ you may use
+%   │   \PassOptionsToPackage{section=HEADING}{glossaries}
+%   │
 %   └───────────────────────────────────────────────────────┘
 
 \usepackage[xindy,toc]{glossaries}
 \makenoidxglossaries%
 
-% same effect as \renewcommand*{\glsgroupskip}{}
-\glsnogroupskiptrue
+% disable grouping of acronyms 
+\glsnogroupskiptrue%
+\renewcommand*{\glsgroupskip}{}

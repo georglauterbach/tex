@@ -5,6 +5,7 @@
     "makeglossaries",
     "noidx",
     "pgfplots",
+    "POSIX",
     "postskip",
     "preskip",
     "scriptum",
