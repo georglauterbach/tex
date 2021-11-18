@@ -26,7 +26,9 @@
 	}
 
 	\newcommand{\as}[1]{\acrshort{#1}}
-	\newcommand{\af}[1]{\acrfull{#1}}
+	\newcommand{\asp}[1]{\acrshort{#1}}
+	\newcommand{\af}[1]{\acrfullpl{#1}}
+	\newcommand{\afp}[1]{\acrfullpl{#1}}
 
 	% acronyms that exists in German and English
 
@@ -35,10 +37,15 @@
 	\newDualLangAcronym{api}{API}{Application Programming Interface}{Programmierschnittstelle}
 	\newDualLangAcronym{ca}{CA}{Certificate Authority}{Zertifizierungsstelle}
 	\newDualLangAcronym{cpu}{CPU}{Central Processing Unit}{Prozessor}
+	\newDualLangAcronym{crc}{CRC}{Cyclic Redundancy Check}{Zyklische Redundanzprüfung}
 	\newDualLangAcronym{ddos}{DDoS}{Distributed Denial-of-Service (Attack)}{Verteilter Denial of Service (Angriff)}
+	\newDualLangAcronym{dma}{DMA}{Direct Memory Access}{Speicherdirektzugriff}
 	\newDualLangAcronym{dos}{DoS}{Denial-of-Service (Attack)}{Denial of Service (Angriff)}
+	\newDualLangAcronym{ecc}{ECC}{Error Correcting Code}{Fehlerkorrigierender Code}
 	\newDualLangAcronym{fs}{FS}{File System}{Dateisystem}
-	\newDualLangAcronym{hmac}{HMAC}{Keyed-Hash (Hash-Based) Message Authentication Code}{Hash-Basierter Nachrichtenauthentifizierungscode}
+	\newDualLangAcronym{hmac}{HMAC}%
+		{Keyed-Hash (Hash-Based) Message Authentication Code}%
+		{Hash-Basierter Nachrichtenauthentifizierungscode}
 	\newDualLangAcronym{hdd}{HDD}{Hard Disk Drive}{Festplattenlaufwerk}
 	\newDualLangAcronym{ipc}{IPC}{Inter-Process Communication}{Interprozesskommunikation}
 	\newDualLangAcronym{ipLaw}{IP}{Intellectual Property}{Geistiges Eigentum}
@@ -52,11 +59,17 @@
 	\newDualLangAcronym{os}{OS}{Operating System}{Bertiebssystem}
 	\newDualLangAcronym{pcb}{PCB}{Process Control Block}{Prozesskontrollblock}
 	\newDualLangAcronym{raid}{RAID}{Redundant Array of Independent Disks}{Redundantes Array unabhängiger Festplatten}
+	\newDualLangAcronym{ram}{RAM}%
+		{Random Access Memory}%
+		{Direktzugriffsspeicher (\enquote{Speicher mit wahlfreiem/direktem Zugriff})}
 	\newDualLangAcronym{rpc}{RPC}{Remote Procedure Call}{\enquote{Aufruf einer fernen Prozedur}}
 	\newDualLangAcronym{sic}{[sic!]}%
-		{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}%
-		{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
+	{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}%
+	{lat. \textit{sīc erat scriptum}, \enquote{so stand es geschrieben}}
+	\newDualLangAcronym{smp}{SMP}{Symmetric (sometimes also shared-memory) Multiprocessing}{Symmetrisches Multiprozessorsystem}
 	\newDualLangAcronym{ssd}{SSD}{Solid State Disk}{Halbleiterlaufwerk}
+	\newDualLangAcronym{tcp}{TCP}{Transmission Control Protocol}{Übertragungssteuerungsprotokoll}
+	\newDualLangAcronym{tlb}{TLB}{Translation Lookaside Buffer}{Übersetzungspuffer}
 	\newDualLangAcronym{tm}{TM}{\textit{Turing} Machine}{\textit{Turing} Maschine}
 	\newDualLangAcronym{vm}{VM}{Virtual Machine}{Virtuelle Maschine}
 	
@@ -68,14 +81,18 @@
 	\newacronym{ieee}{IEEE}{Institute of Electrical and Electronics Engineers}
 	\newacronym{ktcb}{kTCB}{Kernel-Level Thread Control Block}
 	\newacronym{ncme}{NVMe}{Non-Volatile Memory Express}
+	\newacronym{pci}{PCI}{Peripheral Component Interconnect}
+	\newacronym{pcie}{PCIe}{Peripheral Component Interconnect Express}
 	\newacronym{rsa}{RSA}{\textit{Rivest Shamir Adleman}}
 	\newacronym{scsi}{SCSI}{Small Computer System Interface}
 	\newacronym{sgx}{SGX}{Software Guard Extensions}
 	\newacronym{sha}{SHA}{Secure Hash Algorithm}
 	\newacronym{tcb}{TCB}{Thread Control Block}
+	\newacronym{tcpip}{TCP/IP}{Transmission Control Protocol/Internet Protocol}
 	\newacronym{tdx}{TDX}{Trusted Domain Extensions}
 	\newacronym{tee}{TEE}{Trusted Execution Environment}
 	\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
+	\newacronym{usb}{USB}{Universal Serial Bus}
 	\newacronym{utcb}{uTCB}{User-Level Thread Control Block}
 
 \fi
