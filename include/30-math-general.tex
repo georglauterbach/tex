@@ -1,0 +1,68 @@
+%   ┌───────────────────────────────────────────────────────┐
+%   │
+% ? | Loads packages associated with mathematics.
+%   │
+%   └───────────────────────────────────────────────────────┘
+
+% ? >> packages
+
+\usepackage{%
+	amsmath,
+	amsfonts,
+	mathtools,
+	amssymb,
+	mathrsfs,
+	mathtools
+}
+
+\usepackage{%
+	cancel,
+	bm,
+	stmaryrd,
+	colonequals,
+	proof,
+	centernot,
+	relsize,
+	rotating,
+	tabstackengine
+}
+
+\TABstackMath
+\TABbinary
+
+% ? >> new commands
+
+\newcommand{\bb}[1]{\ensuremath{\mathbb{#1}}}
+\renewcommand{\cal}[1]{\ensuremath{\mathcal{#1}}}
+
+\newcommand{\contra}{\scalebox{1.0}{$\lightning$}}
+
+\renewcommand{\vdash}{\mathrel{|}\joinrel\mathrel{-}}
+\renewcommand{\vDash}{\mathrel{|}\joinrel\mathrel{=}}
+\renewcommand{\Vdash}{\mathrel{|}\joinrel\mathrel{|}\joinrel\mathrel{-}}
+
+\newcommand{\verteq}{\rotatebox[origin=c]{90}{$\mkern1mu=$}}
+\newcommand{\vertequiv}{\rotatebox[origin=c]{90}{$\equiv$}}
+
+% ? >> fixes
+
+\def\thm@space@setup{%
+	\thm@preskip=\parskip\thm@postskip=0pt
+}
+\makeatother
+
+% >> absolute signs
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% >>> swap the definition of \abs* and \norm*,
+%     so that \abs and \norm  resizes the size
+%     of the brackets, and the starred version
+%     does not.
+\makeatletter
+\let\oldabs\abs%
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm%
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother

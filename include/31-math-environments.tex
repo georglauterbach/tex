@@ -3,54 +3,15 @@
 % ? | Loads (mathematics related) environments.
 %   │
 %   | Definitions, theorems, lemmas, corollaries, etc.
-%   │ are defined here. Moreover, all mathematics-related
-%   │ packages are loaded as well.
+%   │ are defined here.
 %   │
 %   └───────────────────────────────────────────────────────┘
 
 \usepackage{%
-	amsmath,
-	amsfonts,
-	mathtools,
-	amsthm,
-	amssymb,
-	mathrsfs,
-	mathtools
-}
-
-
-\usepackage{%
-	cancel,
-	bm,
-	stmaryrd,
-	colonequals,
-	proof,
 	mdframed,
-	centernot
+	amsmath,
+	amsthm
 }
-
-% ? >> miscellaneous
-
-\newcommand{\N}{\ensuremath{\mathbb{N}}}
-\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
-\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
-\newcommand{\R}{\ensuremath{\mathbb{R}}}
-\renewcommand{\C}{\ensuremath{\mathbb{C}}}
-
-\newcommand{\cC}{\ensuremath{\mathcal{C}}}
-\newcommand{\cD}{\ensuremath{\mathcal{D}}}
-\newcommand{\cM}{\ensuremath{\mathcal{M}}}
-\newcommand{\cP}{\ensuremath{\mathcal{P}}}
-\newcommand{\cQ}{\ensuremath{\mathcal{Q}}}
-\newcommand{\cU}{\ensuremath{\mathcal{U}}}
-
-\newcommand{\var}[1]{\mathit{\text{#1}}}
-\newcommand{\func}[1]{\operatorname{\text{#1}}}
-\newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
-
-\renewcommand{\vdash}{\mathrel{|}\joinrel\mathrel{-}}
-\renewcommand{\vDash}{\mathrel{|}\joinrel\mathrel{=}}
-\renewcommand{\Vdash}{\mathrel{|}\joinrel\mathrel{|}\joinrel\mathrel{-}}
 
 % ? >> boxed content
 
@@ -117,25 +78,3 @@
 
 \fi
 
-% ? >> fixes
-
-\def\thm@space@setup{%
-	\thm@preskip=\parskip\thm@postskip=0pt
-}
-\makeatother
-
-% >> absolute signs
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
-
-% >>> swap the definition of \abs* and \norm*,
-%     so that \abs and \norm  resizes the size
-%     of the brackets, and the starred version
-%     does not.
-\makeatletter
-\let\oldabs\abs%
-\def\abs{\@ifstar{\oldabs}{\oldabs*}}
-%
-\let\oldnorm\norm%
-\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
-\makeatother
