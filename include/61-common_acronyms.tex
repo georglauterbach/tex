@@ -45,8 +45,8 @@
 	\newDualLangAcronym{fs}{FS}{File System}{Dateisystem}
 	\newDualLangAcronym{gui}{GUI}{graphical User Interface}{Grafische Benutzeroberfläche}
 	\newDualLangAcronym{hmac}{HMAC}%
-		{Keyed-Hash (Hash-Based) Message Authentication Code}%
-		{Hash-Basierter Nachrichtenauthentifizierungscode}
+	{Keyed-Hash (Hash-Based) Message Authentication Code}%
+	{Hash-Basierter Nachrichtenauthentifizierungscode}
 	\newDualLangAcronym{hdd}{HDD}{Hard Disk Drive}{Festplattenlaufwerk}
 	\newDualLangAcronym{ipc}{IPC}{Inter-Process Communication}{Interprozesskommunikation}
 	\newDualLangAcronym{ipLaw}{IP}{Intellectual Property}{Geistiges Eigentum}
@@ -64,8 +64,8 @@
 	\newDualLangAcronym{pcb}{PCB}{Process Control Block}{Prozesskontrollblock}
 	\newDualLangAcronym{raid}{RAID}{Redundant Array of Independent Disks}{Redundantes Array unabhängiger Festplatten}
 	\newDualLangAcronym{ram}{RAM}%
-		{Random Access Memory}%
-		{Direktzugriffsspeicher (\enquote{Speicher mit wahlfreiem/direktem Zugriff})}
+	{Random Access Memory}%
+	{Direktzugriffsspeicher (\enquote{Speicher mit wahlfreiem/direktem Zugriff})}
 	\newDualLangAcronym{rpc}{RPC}{Remote Procedure Call}{\enquote{Aufruf einer fernen Prozedur}}
 	\newDualLangAcronym{sic}{[sic!]}%
 	{lat. \textit{sīc erat scriptum}, \enquote{thus was it written}}%
@@ -77,9 +77,9 @@
 	\newDualLangAcronym{tlb}{TLB}{Translation Lookaside Buffer}{Übersetzungspuffer}
 	\newDualLangAcronym{tm}{TM}{\textit{Turing} Machine}{\textit{Turing} Maschine}
 	\newDualLangAcronym{vm}{VM}{Virtual Machine}{Virtuelle Maschine}
-	
+
 	% acronyms that exist as proper nouns only
-	
+
 	\newacronym{ccnuma}{ccNUMA}{Cache-Coherent Non-Uniform Memory Access}
 	\newacronym{dh}{DH}{\textit{Diffie Hellman}}
 	\newacronym{ecdsa}{ECDSA}{Elliptic Curve Digital Signature Algorithm}
@@ -105,10 +105,11 @@
 \fi
 
 \ifenglish%
-	\newglossaryentry{posix}
+
+	\newglossaryentry{gnu}
 	{%
-		name={POSIX},
-		description={The Portable Operating System Interface (POSIX) is a family of standards specified by the \textit{IEEE} Computer Society for maintaining compatibility between operating systems (OS). POSIX defines both the system- and user-level application programming interfaces (API), along with command line shells and utility interfaces, for software compatibility (portability) with variants of \textit{UNIX} and other OS.}
+		name={GNU},
+		description={GNU ist ein unixähnliches Betriebssystem und vollständig freie Software, das im Rahmen des 1984 gestarteten GNU-Projekts als Softwaresammlung von Anwendungen und Bibliotheken entwickelt wird. GNU steht unter der GNU General Public License (GPL). Da ein eigener Kernel des Projekts, GNU Hurd, nicht für den praktischen Einsatz geeignet ist, wird das System heute in der Regel mit dem Linux-Kernel kombiniert und GNU/Linux, zumeist aber einfach Linux genannt. }
 	}
 
 	\newglossaryentry{linux}
@@ -117,24 +118,36 @@
 		description={\textit{Linux} is a family of open-source \textit{UNIX}-like operating systems (OS) based on the \textit{Linux} kernel, an OS kernel first released on September $17$, $1991$, by \textit{Linus Torvalds}. \textit{Linux} is typically packaged in a \textit{Linux} distribution.}
 	}
 
+	\newglossaryentry{posix}
+	{%
+		name={POSIX},
+		description={The Portable Operating System Interface (POSIX) is a family of standards specified by the \textit{IEEE} Computer Society for maintaining compatibility between operating systems (OS). POSIX defines both the system- and user-level application programming interfaces (API), along with command line shells and utility interfaces, for software compatibility (portability) with variants of \textit{UNIX} and other OS.}
+	}
+
 	\newglossaryentry{unix}
 	{%
 		name={UNIX},
-		description={\textit{UNIX} s a family of multitasking, multi-user computer operating systems (OS) that derive from the original AT&T Unix, whose development started in $1969$ at the \textit{Bell Laboratories} research center by \textit{Ken Thompson}, \textit{Dennis Ritchie}, and others.}
+		description={\textit{UNIX} s a family of multitasking, multi-user computer operating systems (OS) that derive from the original AT\&T Unix, whose development started in $1969$ at the \textit{Bell Laboratories} research center by \textit{Ken Thompson}, \textit{Dennis Ritchie}, and others.}
 	}
 
 \else
 
-	\newglossaryentry{posix}
+	\newglossaryentry{gnu}
 	{%
-		name={POSIX},
-		description={Das Portable Operating System Interface (POSIX) ist eine gemeinsam vom \textit{IEEE} und der \textit{Open Group} für \textit{UNIX} entwickelte standardisierte Programmierschnittstelle, welche die Schnittstelle zwischen Anwendungssoftware und Betriebssystem (OS) darstellt. Die internationale Norm trägt die Bezeichnung \textit{ISO/IEC/IEEE} $9945$.}
+		name={GNU},
+		description={GNU is an extensive collection of free software, which can be used as an operating system or can be used in parts with other operating systems. The use of the completed GNU tools led to the family of operating systems popularly known as Linux. Most of GNU is licensed under the GNU Project's own General Public License (GPL)}
 	}
 
 	\newglossaryentry{linux}
 	{%
 		name={Linux},
 		description={Als \textit{Linux} oder \textit{GNU/Linux} bezeichnet man in der Regel freie, \textit{UNIX}-ähnliche Mehrbenutzer-Betriebssysteme, die auf dem \textit{Linux}-Kernel und wesentlich auf GNU-Software basieren. Die weite, auch kommerzielle Verbreitung wurde ab $1992$ durch die Lizenzierung des \textit{Linux}-Kernels unter der freien Lizenz GPL ermöglicht. Einer der Initiatoren von Linux war der finnische Programmierer \textit{Linus Torvalds}. Er nimmt bis heute eine koordinierende Rolle bei der Weiterentwicklung des \textit{Linux}-Kernels ein.}
+	}
+
+	\newglossaryentry{posix}
+	{%
+		name={POSIX},
+		description={Das Portable Operating System Interface (POSIX) ist eine gemeinsam vom \textit{IEEE} und der \textit{Open Group} für \textit{UNIX} entwickelte standardisierte Programmierschnittstelle, welche die Schnittstelle zwischen Anwendungssoftware und Betriebssystem (OS) darstellt. Die internationale Norm trägt die Bezeichnung \textit{ISO/IEC/IEEE} $9945$.}
 	}
 
 	\newglossaryentry{unix}
