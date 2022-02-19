@@ -1,17 +1,25 @@
 %   ┌───────────────────────────────────────────────────────┐
 %   |
-% ? | Loads the `babel' package with the English language.
-%   |
-% ! | Must be loaded first.
-% ! | Mutually exclusive with `01-language_german.tex`
-% ! | Must be loaded for other headers to work.
-%   |
-%   | Provides the `\ifenglish` check with a value of
-%   | `true`.
+% ? | Loads `siunitx`, a unit package.
 %   |
 %   └───────────────────────────────────────────────────────┘
 
-\usepackage[english]{babel}
+\usepackage[binary-units]{siunitx}
 
-\newif\ifenglish%
-\englishtrue%
+\ifenglish%
+
+  \sisetup{%
+  	locale={US},
+  	input-decimal-markers={.},
+  	group-separator={\,}
+  }
+
+\else
+
+  \sisetup{%
+  	locale={DE},
+  	input-decimal-markers={\,},
+  	group-separator={.}
+  }
+
+\fi
