@@ -5,8 +5,14 @@
 %   │
 %   └───────────────────────────────────────────────────────┘
 
-\clearpage%
+\label{appendix}
+\cleardoublepage%
+
 \pagenumbering{gobble}
 \pagestyle{empty}
 
 \printnoidxglossary%
+
+\ifbibliographyloaded%
+	\printbibliography[heading=bibintoc]
+\fi

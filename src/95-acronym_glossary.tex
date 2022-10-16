@@ -9,8 +9,13 @@
 %   │
 %   └───────────────────────────────────────────────────────┘
 
-\clearpage%
+\label{appendix}
+\cleardoublepage%
 \pagenumbering{gobble}
 \pagestyle{empty}
 
 \printnoidxglossary[type=\acronymtype]
+
+\ifbibliographyloaded%
+	\printbibliography[heading=bibintoc]
+\fi

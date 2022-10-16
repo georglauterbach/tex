@@ -1,16 +1,19 @@
 %   ┌───────────────────────────────────────────────────────┐
 %   │
-% ? | Makes sure all glossaries, including acronyms,
-% ? | are displayed.
+% ? | Adjust the page header.
 %   │
 %   └───────────────────────────────────────────────────────┘
 
-\label{appendix}
-\pagenumbering{gobble}
-\pagestyle{empty}
+% ? >> packages
 
-\printnoidxglossaries%
+\usepackage{fancyhdr}
 
-\ifbibliographyloaded%
-	\printbibliography[heading=bibintoc]
-\fi
+% ? >> options
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\renewcommand{\headrulewidth}{0.1pt}
+
+\fancyhead[R]{\nouppercase{\rightmark}}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
