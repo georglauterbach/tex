@@ -19,13 +19,12 @@
   "latex-workshop.latex.outDir": "out",
   "latex-workshop.latex.tools": [
     {
-      "name": "xelatex",
-      "command": "xelatex",
+      "name": "lualatex",
+      "command": "lualatex",
       "args": [
-        "-synctex=1",
+        "-shell-escape",
         "-interaction=nonstopmode",
         "-file-line-error",
-        "-shell-escape",
         "-output-directory=%OUTDIR%",
         "%DOC%"
       ],
@@ -34,22 +33,36 @@
     {
       "name": "biber",
       "command": "biber",
-      "args": ["--output-directory=%OUTDIR%", "%DOCFILE%"]
+      "args": [
+        "--output-directory=%OUTDIR%",
+        "%DOCFILE%"
+      ]
     },
     {
       "name": "makeglossaries",
       "command": "makeglossaries",
-      "args": ["-d%OUTDIR%", "%DOCFILE%"]
+      "args": [
+        "-d%OUTDIR%",
+        "%DOCFILE%"
+      ]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
       "name": "plain",
-      "tools": ["xelatex"]
+      "tools": [
+        "lualatex"
+      ]
     },
     {
       "name": "full",
-      "tools": ["xelatex", "biber", "makeglossaries", "xelatex"]
+      "tools": [
+        "lualatex",
+        "biber",
+        "makeglossaries",
+        "lualatex",
+        "lualatex"
+      ]
     }
   ],
 }

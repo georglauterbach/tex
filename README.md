@@ -32,7 +32,7 @@ and not inside the preamble. These files mainly exists to eliminate boilerplate 
 
 ## Disclaimer
 
-These files were created to work with XeLaTeX version `XeTeX 3.14159265-2.6-0.999992`. There is no guarantee that these files work with other versions or other drivers. You may want to have a look at `.vscode/settings.json` for an implementation into [VS Code] with the [LaTeX workshop extension].
+These files were created to work with `LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)`. There is no guarantee that these files work with other versions or other drivers. You may want to have a look at `.vscode/settings.json` for an implementation into [VS Code] with the [LaTeX workshop extension].
 
 [VS Code]: https://code.visualstudio.com/
 [LaTeX workshop extension]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
