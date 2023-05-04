@@ -4,12 +4,12 @@
 %   │
 % ! │ Keep in mind that you will need to use `biber`
 % ! │ if you intent to use this header. You will need
-% ! │ to run biber separately.
+% ! │ to run `biber` separately.
 %   │
 %   └───────────────────────────────────────────────────────┘
 
 \usepackage[backend=biber]{biblatex}
-% \bibliography{references}
+% \addbibresource{references.bib}
 \bibliographyloadedtrue%
 
 \makeatletter
@@ -19,9 +19,21 @@
 \makeatother
 
 \ifacronymsOptionIsLoaded%
-	\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, ``thus was it written``}
-	\newcommand{\sic}{\as{sic}\ }
-\else
-	\newcommand{\sic}{\textit{sic!}}
-\fi
 
+\newcommand{\as}[1]{\acrshort{#1}}
+\newcommand{\As}[1]{\Acrshort{#1}}
+\newcommand{\asp}[1]{\acrshortpl{#1}}
+\newcommand{\Asp}[1]{\Acrshortpl{#1}}
+\newcommand{\af}[1]{\acrfull{#1}}
+\newcommand{\Af}[1]{\Acrfull{#1}}
+\newcommand{\afp}[1]{\acrfullpl{#1}}
+\newcommand{\Afp}[1]{\Acrfullpl{#1}}
+
+\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, ``thus was it written``}
+\newcommand{\sic}{\as{sic}\ }
+
+\else
+
+\newcommand{\sic}{\textit{sic!}}
+
+\fi

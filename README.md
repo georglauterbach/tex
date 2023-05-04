@@ -34,5 +34,11 @@ and not inside the preamble. These files mainly exists to eliminate boilerplate 
 
 These files were created to work with `LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)`. There is no guarantee that these files work with other versions or other drivers. You may want to have a look at `.vscode/settings.json` for an implementation into [VS Code] with the [LaTeX workshop extension].
 
+The required packages can be installed by running:
+
+```bash
+apt-get --yes install texlive-latex-recommended texlive-luatex texlive-lang-european texlive-science texlive-bibtex-extra biber
+```
+
 [VS Code]: https://code.visualstudio.com/
 [LaTeX workshop extension]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop

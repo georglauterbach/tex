@@ -1,7 +1,7 @@
 %   ┌───────────────────────────────────────────────────────┐
 %   │
-% ? | Loads extra (mostly mathematics
-% ? | related) environments.
+% ? | Loads `mdframed` and extra setup that enables
+% ? | frames similar to MkDocs' Admonitions.
 %   │
 %   | Definitions, theorems, lemmas, corollaries, etc.
 %   │ are defined here.
@@ -10,19 +10,13 @@
 %   │
 %   └───────────────────────────────────────────────────────┘
 
-\usepackage{%
-	fontawesome,
-	amsmath,
-	amsthm
-}
-
 \usepackage[%
 	framemethod=TikZ,
 	roundcorner=2pt,
 	hidealllines=false,
 	frametitlerule=false,
-	skipabove=\baselineskip,
-	skipbelow=\baselineskip,
+	skipabove=\baselineskip plus 2pt minus 1pt,
+	skipbelow=\baselineskip plus 2pt minus 1pt,
 	frametitleaboveskip=7pt,
 	frametitlebelowskip=7pt,
 	innertopmargin=10pt,
@@ -36,27 +30,25 @@
 \mdfdefinestyle{problem}{linewidth=.5pt,linecolor=OrangePantone,frametitlebackgroundcolor={OrangePantone!20}}
 \mdfdefinestyle{notation}{linewidth=.5pt,linecolor=SelectiveYellow,frametitlebackgroundcolor={SelectiveYellow!20}}
 
-\newcommand{\tn}[1]{\textnormal{#1}}
+\mdtheorem[style=definition] {definition}   {Definition}  [subsection]
+\mdtheorem[style=definition] {lemma}        [definition]  {Lemma}
 
-\mdtheorem[style=definition] {definition}   {\tn{\faBook}~~Definition} [subsection]
-\mdtheorem[style=definition] {lemma}        [definition]  {\tn{\faBook}~~Lemma}
-
-\mdtheorem[style=notation]   {axiom}        [definition]  {\tn{\faCircleThin}~~Axiom}
-\mdtheorem[style=notation]   {notation}     [definition]  {\tn{\faPencil}~~Notation}
-\mdtheorem[style=problem]    {problem}      [definition]  {\tn{\faQuestionCircle}~~Problem}
+\mdtheorem[style=notation]   {axiom}        [definition]  {Axiom}
+\mdtheorem[style=notation]   {notation}     [definition]  {Notation}
+\mdtheorem[style=problem]    {problem}      [definition]  {Problem}
 
 \ifenglish%
 
-\mdtheorem[style=theorem]    {theorem}      [definition]  {\tn{\faChevronDown}~~Theorem}
-\mdtheorem[style=theorem]    {corollary}    [definition]  {\tn{\faChevronRight}~~Corollary}
-\mdtheorem[style=proof]      {proofs}       [definition]  {\tn{\faChevronUp}~~Proof}
-\mdtheorem[style=default]    {example}      [definition]  {\tn{\faReorder}Example}
+\mdtheorem[style=theorem]    {theorem}      [definition]  {Theorem}
+\mdtheorem[style=theorem]    {corollary}    [definition]  {Corollary}
+\mdtheorem[style=proof]      {proofs}       [definition]  {Proof}
+\mdtheorem[style=default]    {example}      [definition]  {Example}
 
 \else
 
-\mdtheorem[style=theorem]    {satz}         [definition]  {\tn{\faChevronDown}~~Satz}
-\mdtheorem[style=theorem]    {korollar}     [definition]  {\tn{\faChevronRight}~~Korollar}
-\mdtheorem[style=proof]      {beweis}       [definition]  {\tn{\faChevronUp}~~Beweis}
-\mdtheorem[style=default]    {beispiel}     [definition]  {\tn{\faReorder}Beispiel}
+\mdtheorem[style=theorem]    {satz}         [definition]  {Satz}
+\mdtheorem[style=theorem]    {korollar}     [definition]  {Korollar}
+\mdtheorem[style=proof]      {beweis}       [definition]  {Beweis}
+\mdtheorem[style=default]    {beispiel}     [definition]  {Beispiel}
 
 \fi
