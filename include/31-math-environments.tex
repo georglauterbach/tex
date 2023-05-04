@@ -1,6 +1,7 @@
 %   ┌───────────────────────────────────────────────────────┐
 %   │
-% ? | Loads (mathematics related) environments.
+% ? | Loads extra (mostly mathematics
+% ? | related) environments.
 %   │
 %   | Definitions, theorems, lemmas, corollaries, etc.
 %   │ are defined here.
@@ -8,73 +9,52 @@
 %   └───────────────────────────────────────────────────────┘
 
 \usepackage{%
-	mdframed,
+	fontawesome,
 	amsmath,
 	amsthm
 }
 
-% ? >> boxed content
-
-\mdfsetup{%
-	skipabove=1em,
-	skipbelow=.7em,
+\usepackage[%
+	framemethod=TikZ,
+	skipabove=\baselineskip plus 2pt minus 1pt,
+	skipbelow=\baselineskip plus 2pt minus 1pt,
+	frametitleaboveskip= 7pt,
+	frametitlebelowskip= 7pt,
+	innertopmargin=10pt,
+	innerbottommargin=10pt,
+	topline=true, bottomline=true, rightline=true,leftline=true,
 	frametitlerule=false,
-	% nobreak=true,
-}
+	roundcorner=2pt,
+	]{mdframed}
 
-\mdfdefinestyle{defaultBoxed}{
-	linewidth=0.5pt,
-	outerlinewidth=0.5pt,
-	innertopmargin=0.5\topskip,
-	innerbottommargin=\baselineskip,
-}
+\mdfdefinestyle{default}{linewidth=.5pt,linecolor=aquamarine,frametitlebackgroundcolor={aquamarine!20}}
+\mdfdefinestyle{definition}{linewidth=.5pt,linecolor=cornflowerBlue,frametitlebackgroundcolor={cornflowerBlue!20}}
+\mdfdefinestyle{theorem}{linewidth=.5,linecolor=mediumSlateBlue,frametitlebackgroundcolor={mediumSlateBlue!20}}
+\mdfdefinestyle{proof}{linewidth=.5pt,linecolor=mexicanPink,frametitlebackgroundcolor={mexicanPink!20}}
+\mdfdefinestyle{problem}{linewidth=.5pt,linecolor=orangePantone,frametitlebackgroundcolor={orangePantone!20}}
+\mdfdefinestyle{notation}{linewidth=.5pt,linecolor=selectiveYellow,frametitlebackgroundcolor={selectiveYellow!20}}
 
-\mdtheorem[style=defaultBoxed] {definition} {Definition}  [subsubsection]
-\mdtheorem[style=defaultBoxed] {lemma}      [definition]  {Lemma}
+\newcommand{\tn}[1]{\textnormal{#1}}
 
-\ifenglish%
+\mdtheorem[style=definition] {definition}   {\tn{\faBook}~~Definition} [subsection]
+\mdtheorem[style=definition] {lemma}        [definition]  {\tn{\faBook}~~Lemma}
 
-	\mdtheorem[style=defaultBoxed] {theorem}    [definition]  {Theorem}
-	\mdtheorem[style=defaultBoxed] {proofs}     [definition]  {Proof}
-
-\else
-
-	\mdtheorem[style=defaultBoxed] {satz}       [definition]  {Satz}
-	\mdtheorem[style=defaultBoxed] {beweis}     [definition]  {Beweis}
-
-\fi
-
-% ? >> non-boxed content
-
-\theoremstyle{definition}
-
-\newtheorem* {axiom}        {Axiom}
-\newtheorem* {notation}     {Notation}
-\newtheorem* {problem}      {Problem}
-
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=prussianBlue]{axiom}
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=powderBlue]{notation}
-\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=imperialRed]{problem}
+\mdtheorem[style=notation]   {axiom}        [definition]  {\tn{\faCircleThin}~~Axiom}
+\mdtheorem[style=notation]   {notation}     [definition]  {\tn{\faPencil}~~Notation}
+\mdtheorem[style=problem]    {problem}      [definition]  {\tn{\faQuestionCircle}~~Problem}
 
 \ifenglish%
 
-	\newtheorem* {example}      {Example}
-	\newtheorem* {corollary}    {Corollary}
-	\newtheorem* {terminology}  {Terminology}
-
-	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{example}
-	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{corollary}
-	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminology}
+\mdtheorem[style=theorem]    {theorem}      [definition]  {\tn{\faChevronDown}~~Theorem}
+\mdtheorem[style=theorem]    {corollary}    [definition]  {\tn{\faChevronRight}~~Corollary}
+\mdtheorem[style=proof]      {proofs}       [definition]  {\tn{\faChevronUp}~~Proof}
+\mdtheorem[style=default]    {example}      [definition]  {\tn{\faReorder}Example}
 
 \else
 
-	\newtheorem* {beispiel}     {Beispiel}
-	\newtheorem* {korollar}     {Korollar}
-	\newtheorem* {terminologie} {Terminologie}
-
-	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=honeydew]{beispiel}
-	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{korollar}
-	\surroundwithmdframed[linewidth=3pt,topline=false,bottomline=false,rightline=false,linecolor=celadonBlue]{terminologie}
+\mdtheorem[style=theorem]    {satz}         [definition]  {\tn{\faChevronDown}~~Satz}
+\mdtheorem[style=theorem]    {korollar}     [definition]  {\tn{\faChevronRight}~~Korollar}
+\mdtheorem[style=proof]      {beweis}       [definition]  {\tn{\faChevronUp}~~Beweis}
+\mdtheorem[style=default]    {beispiel}     [definition]  {\tn{\faReorder}Beispiel}
 
 \fi
-
