@@ -11,22 +11,13 @@
 % ? >> encoding & fonts
 
 \usepackage[T1]{fontenc}
-% \usepackage[utf8]{inputenc}
 
-\usepackage{
+\usepackage{%
 	textcomp,
 	verbatim,
 	fancyvrb,
 	fontspec,
 }
-
-\setmonofont[%
-	Contextuals={Alternate},
-	Scale=MatchLowercase,
-	BoldFont={Fira Code Bold}, 
-	ItalicFont={Fira Code},
-	BoldItalicFont={Fira Code Bold}
-]{Fira Code}
 
 % ? >> formatting
 
@@ -36,7 +27,6 @@
 	booktabs,
 	enumitem,
 	emptypage,
-	parskip,
 	subcaption,
 	multicol,
 	blindtext,
@@ -55,8 +45,8 @@
 
 % ? >> title page & layout
 
-\usepackage[heightrounded,xetex,pass]{geometry}
-\usepackage[usetransparent=false]{svg}
+\usepackage[heightrounded,pdftex,pass]{geometry}
+\usepackage{svg}
 
 \usepackage[outermarks]{titleps}
 
