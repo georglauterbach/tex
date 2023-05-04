@@ -19,5 +19,13 @@
     "Powder Blue": "a8dadc",
     "Celadon Blue": "457b9d",
     "Prussian Blue": "1d3557"
+  },
+  "scheme 3": { // IBM Color Blind Pallette (Extended) | https://coolors.co/648fff-785ef0-dc267f-fe6100-ffb000-00ffa6
+    "Cornflower Blue": "648FFF",
+    "Medium Slate Blue": "785EF0",
+    "Mexican Pink": "DC267F",
+    "Orange (Pantone)": "FE6100",
+    "Selective Yellow": "FFB000",
+    "Aquamarine": "00FFA6"
   }
 }
