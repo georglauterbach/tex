@@ -11,3 +11,17 @@
 \usepackage[backend=biber]{biblatex}
 % \bibliography{references}
 \bibliographyloadedtrue%
+
+\makeatletter
+\@ifpackagewith{glossaries}{acronym}%
+{\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedtrue}%
+{\newif\ifacronymsOptionIsLoaded\acronymsOptionIsLoadedfalse}
+\makeatother
+
+\ifacronymsOptionIsLoaded%
+	\newacronym{sic}{[sic!]}{lat. \textit{sīc erat scriptum}, ``thus was it written``}
+	\newcommand{\sic}{\as{sic}\ }
+\else
+	\newcommand{\sic}{\textit{sic!}}
+\fi
+
