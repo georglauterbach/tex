@@ -3,13 +3,10 @@
     "biblatex",
     "ifpackagewith",
     "makeglossaries",
-    "noidx",
     "pgfplots",
-    "POSIX",
     "postskip",
     "preskip",
-    "scriptum",
-    "xindy"
+    "scriptum"
   ],
 
   // TeX
