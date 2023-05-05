@@ -37,7 +37,7 @@ These files were created to work with `LuaHBTeX, Version 1.14.0 (TeX Live 2022/d
 The required packages can be installed by running:
 
 ```bash
-apt-get --yes install texlive-latex-recommended texlive-luatex texlive-lang-european texlive-science texlive-bibtex-extra biber
+apt-get --yes install texlive-latex-extra texlive-luatex texlive-lang-european texlive-science texlive-bibtex-extra biber
 ```
 
 [VS Code]: https://code.visualstudio.com/
