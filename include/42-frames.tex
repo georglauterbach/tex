@@ -10,6 +10,8 @@
 %   │
 %   └───────────────────────────────────────────────────────┘
 
+\framesloadedtrue%
+
 \usepackage[%
 	framemethod=TikZ,
 	roundcorner=2pt,
@@ -30,25 +32,35 @@
 \mdfdefinestyle{problem}{linewidth=.5pt,linecolor=OrangePantone,frametitlebackgroundcolor={OrangePantone!20}}
 \mdfdefinestyle{notation}{linewidth=.5pt,linecolor=SelectiveYellow,frametitlebackgroundcolor={SelectiveYellow!20}}
 
-\mdtheorem[style=definition] {definition}   {Definition}
-\mdtheorem[style=definition] {lemma}        [definition]  {Lemma}
+\newcounter{definition-counter}\setcounter{definition-counter}{0}
+\newcounter{lemma-counter}\setcounter{lemma-counter}{0}
+\newcounter{axiom-counter}\setcounter{axiom-counter}{0}
+\newcounter{notation-counter}\setcounter{notation-counter}{0}
+\newcounter{problem-counter}\setcounter{problem-counter}{0}
 
-\mdtheorem[style=notation]   {axiom}        [definition]  {Axiom}
-\mdtheorem[style=notation]   {notation}     [definition]  {Notation}
-\mdtheorem[style=problem]    {problem}      [definition]  {Problem}
+\mdtheorem[style=definition] {definition} [definition-counter] {Definition}
+\mdtheorem[style=definition] {lemma}      [lemma-counter]      {Lemma}
+\mdtheorem[style=notation]   {axiom}      [axiom-counter]      {Axiom}
+\mdtheorem[style=notation]   {notation}   [notation-counter]   {Notation}
+\mdtheorem[style=problem]    {problem}    [problem-counter]    {Problem}
+
+\newcounter{theorem-counter}\setcounter{theorem-counter}{0}
+\newcounter{corollary-counter}\setcounter{corollary-counter}{0}
+\newcounter{proof-counter}\setcounter{proof-counter}{0}
+\newcounter{example-counter}\setcounter{example-counter}{0}
 
 \ifenglish%
 
-\mdtheorem[style=theorem]    {theorem}      [definition]  {Theorem}
-\mdtheorem[style=theorem]    {corollary}    [definition]  {Corollary}
-\mdtheorem[style=proof]      {proofs}       [definition]  {Proof}
-\mdtheorem[style=default]    {example}      [definition]  {Example}
+\mdtheorem[style=theorem] {theorem}   [theorem-counter]   {Theorem}
+\mdtheorem[style=theorem] {corollary} [corollary-counter] {Corollary}
+\mdtheorem[style=proof]   {proof}     [proof-counter]     {Proof}
+\mdtheorem[style=default] {example}   [example-counter]   {Example}
 
 \else
 
-\mdtheorem[style=theorem]    {satz}         [definition]  {Satz}
-\mdtheorem[style=theorem]    {korollar}     [definition]  {Korollar}
-\mdtheorem[style=proof]      {beweis}       [definition]  {Beweis}
-\mdtheorem[style=default]    {beispiel}     [definition]  {Beispiel}
+\mdtheorem[style=theorem] {satz}      [theorem-counter]   {Satz}
+\mdtheorem[style=theorem] {korollar}  [corollary-counter] {Korollar}
+\mdtheorem[style=proof]   {beweis}    [proof-counter]     {Beweis}
+\mdtheorem[style=default] {beispiel}  [example-counter]   {Beispiel}
 
 \fi

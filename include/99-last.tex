@@ -20,4 +20,44 @@
 % ? > loaded last
 
 \usepackage[autostyle]{csquotes}
-\usepackage[noabbrev]{cleveref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\ifframesloaded%
+
+\ifenglish%
+
+\crefname{subsection}{section}{sections}
+\crefname{subsubsection}{subsection}{subsections}
+\crefname{paragraph}{paragraph}{paragraphs}
+
+\crefname{definition-counter}{definition}{definitions}
+\crefname{lemma-counter}{lemma}{lemmas}
+\crefname{axiom-counter}{axiom}{axioms}
+\crefname{notation-counter}{notation}{notations}
+\crefname{problem-counter}{problem}{problems}
+
+\crefname{theorem-counter}{theorem}{theorems}
+\crefname{corollary-counter}{corollary}{corollaries}
+\crefname{proof-counter}{proof}{proofs}
+\crefname{example-counter}{example}{examples}
+
+\else % ifenglish
+
+\crefname{subsection}{Sektion}{Sektionen}
+\crefname{subsubsection}{Untersektion}{Untersektionen}
+\crefname{paragraph}{Paragraph}{Paragraphen}
+
+\crefname{definition-counter}{Definition}{Definitionen}
+\crefname{lemma-counter}{Lemma}{Lemmas}
+\crefname{axiom-counter}{Axiom}{Axiome}
+\crefname{notation-counter}{Notation}{Notationen}
+\crefname{problem-counter}{Problem}{Probleme}
+
+\crefname{theorem-counter}{Satz}{Sätze}
+\crefname{corollary-counter}{Korellar}{Korellare}
+\crefname{proof-counter}{Beweis}{Beweise}
+\crefname{example-counter}{Beispiel}{Beispiele}
+
+\fi % ifenglish
+
+\fi % ifframesloaded
