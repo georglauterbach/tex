@@ -7,19 +7,15 @@
 \usepackage{siunitx}
 
 \ifenglish%
-
   \sisetup{%
-  	locale={US},
-  	input-decimal-markers={.},
-  	group-separator={\,}
+    locale={US},
+    input-decimal-markers={.},
+    group-separator={\,}
   }
-
-\else
-
+\else%
   \sisetup{%
-  	locale={DE},
-  	input-decimal-markers={\,},
-  	group-separator={.}
+    locale={DE},
+    input-decimal-markers={\,},
+    group-separator={.}
   }
-
-\fi
+\fi%

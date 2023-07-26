@@ -68,28 +68,28 @@
 
 \ifframesloaded%
 
-\let\oldLemma\lemma
+\let\oldLemma\lemma%
 \renewcommand{\lemma}{\crefalias{definition}{lemma}\oldLemma}
 
-\let\oldAxiom\axiom
+\let\oldAxiom\axiom%
 \renewcommand{\axiom}{\crefalias{definition}{axiom}\oldAxiom}
 
-\let\oldNotation\notation
+\let\oldNotation\notation%
 \renewcommand{\notation}{\crefalias{definition}{notation}\oldNotation}
 
-\let\oldProblem\problem
+\let\oldProblem\problem%
 \renewcommand{\problem}{\crefalias{definition}{problem}\oldProblem}
 
-\let\oldTheorem\theorem
+\let\oldTheorem\theorem%
 \renewcommand{\theorem}{\crefalias{definition}{theorem}\oldTheorem}
 
-\let\oldCorollary\corollary
+\let\oldCorollary\corollary%
 \renewcommand{\corollary}{\crefalias{definition}{corollary}\oldCorollary}
 
-\let\oldProof\proof
+\let\oldProof\proof%
 \renewcommand{\proof}{\crefalias{definition}{proof}\oldProof}
 
-\let\oldExample\example
+\let\oldExample\example%
 \renewcommand{\example}{\crefalias{definition}{example}\oldExample}
 
 \fi% ifframesloaded

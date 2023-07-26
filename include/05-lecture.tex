@@ -8,23 +8,23 @@
 \newcounter{lecture}
 
 \newcommand{\lecture}[1]{
-	\refstepcounter{lecture}
+  \refstepcounter{lecture}
 
-	\vspace{.5em}
-	\begin{center}
-		\begin{minipage}{7cm}
-			\hrule
-			\vspace*{.5em}
-			\begin{center}
-				\ifenglish%
-					L \thelecture~~//~~#1
-				\else
-					VL \thelecture~~//~~#1
-				\fi
-			\end{center}
-			\vspace{.4em}
-			\hrule
-		\end{minipage}
-	\end{center}
-	\vspace*{.5em}
+  \vspace{.5em}
+  \begin{center}
+    \begin{minipage}{7cm}
+      \hrule
+      \vspace*{.5em}
+      \begin{center}
+        \ifenglish%
+          L \thelecture~~//~~#1
+        \else
+          VL \thelecture~~//~~#1
+        \fi
+      \end{center}
+      \vspace{.4em}
+      \hrule
+    \end{minipage}
+  \end{center}
+  \vspace*{.5em}
 }
