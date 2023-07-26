@@ -30,16 +30,16 @@
 
 \ifframesloaded%
 
-\crefname{definition-counter}{definition}{definitions}
-\crefname{lemma-counter}{lemma}{lemmas}
-\crefname{axiom-counter}{axiom}{axioms}
-\crefname{notation-counter}{notation}{notations}
-\crefname{problem-counter}{problem}{problems}
+\crefname{definition}{definition}{definitions}
+\crefname{lemma}{lemma}{lemmas}
+\crefname{axiom}{axiom}{axioms}
+\crefname{notation}{notation}{notations}
+\crefname{problem}{problem}{problems}
 
-\crefname{theorem-counter}{theorem}{theorems}
-\crefname{corollary-counter}{corollary}{corollaries}
-\crefname{proof-counter}{proof}{proofs}
-\crefname{example-counter}{example}{examples}
+\crefname{theorem}{theorem}{theorems}
+\crefname{corollary}{corollary}{corollaries}
+\crefname{proof}{proof}{proofs}
+\crefname{example}{example}{examples}
 
 \fi% ifframesloaded
 
@@ -51,17 +51,45 @@
 
 \ifframesloaded%
 
-\crefname{definition-counter}{Definition}{Definitionen}
-\crefname{lemma-counter}{Lemma}{Lemmas}
-\crefname{axiom-counter}{Axiom}{Axiome}
-\crefname{notation-counter}{Notation}{Notationen}
-\crefname{problem-counter}{Problem}{Probleme}
+\crefname{definition}{Definition}{Definitionen}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{axiom}{Axiom}{Axiome}
+\crefname{notation}{Notation}{Notationen}
+\crefname{problem}{Problem}{Probleme}
 
-\crefname{theorem-counter}{Satz}{Sätze}
-\crefname{corollary-counter}{Korellar}{Korellare}
-\crefname{proof-counter}{Beweis}{Beweise}
-\crefname{example-counter}{Beispiel}{Beispiele}
+\crefname{theorem}{Satz}{Sätze}
+\crefname{corollary}{Korellar}{Korellare}
+\crefname{proof}{Beweis}{Beweise}
+\crefname{example}{Beispiel}{Beispiele}
 
 \fi% ifframesloaded
 
 \fi% ifenglish
+
+\ifframesloaded%
+
+\let\oldLemma\lemma
+\renewcommand{\lemma}{\crefalias{definition}{lemma}\oldLemma}
+
+\let\oldAxiom\axiom
+\renewcommand{\axiom}{\crefalias{definition}{axiom}\oldAxiom}
+
+\let\oldNotation\notation
+\renewcommand{\notation}{\crefalias{definition}{notation}\oldNotation}
+
+\let\oldProblem\problem
+\renewcommand{\problem}{\crefalias{definition}{problem}\oldProblem}
+
+\let\oldTheorem\theorem
+\renewcommand{\theorem}{\crefalias{definition}{theorem}\oldTheorem}
+
+\let\oldCorollary\corollary
+\renewcommand{\corollary}{\crefalias{definition}{corollary}\oldCorollary}
+
+\let\oldProof\proof
+\renewcommand{\proof}{\crefalias{definition}{proof}\oldProof}
+
+\let\oldExample\example
+\renewcommand{\example}{\crefalias{definition}{example}\oldExample}
+
+\fi% ifframesloaded
