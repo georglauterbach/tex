@@ -1,0 +1,27 @@
+%   ┌───────────────────────────────────────────────────────┐
+%   |
+% ? | Settings specifically designed around the `book'
+% ? | class.
+%   |
+%   └───────────────────────────────────────────────────────┘
+
+% Provide an improved layout, which is close to the book class,
+% but comes with smaller margins.
+\newgeometry{
+  top=\dimexpr1in+22pt+14.5pt+19.8pt,% standard offset+topmargin+headheight+headsep
+  textheight=595pt,
+  footskip=27.5pt,
+  marginparwidth=106pt,
+  marginparsep=7pt,
+  columnsep=10pt,
+  outer=11em,
+  inner=9em,
+}
+
+\usepackage{chngcntr}
+\counterwithout*{footnote}{chapter}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\renewcommand{\arraystretch}{1.3}
